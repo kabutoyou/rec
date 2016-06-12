@@ -1,30 +1,33 @@
 import numpy as np
 import pandas as pd
+import os
+
+user_path = os.path.expanduser()
 
 # User Data Load
-userData = pd.read_csv('/Users/junghongpark/Desktop/recommender/movieLens/ml-100k/u.data',
+user_data = pd.read_csv(user_path+'/Desktop/recommender/movieLens/ml-100k/u.data',
                        sep='\t',
                        header=None,
                        )
 
-userData.columns = ['customer',
+user_data.columns = ['customer',
                     'movie',
                     'rating',
                     'time',
                     ]
 
 # Genre Index Load
-genreIndex = pd.read_csv('/Users/junghongpark/Desktop/recommender/movieLens/ml-100k/u.genre',
+genre_index = pd.read_csv(user_path+'/Desktop/recommender/movieLens/ml-100k/u.genre',
                          sep='|',
                          header=None,
                          )
 
-genreIndex.columns = ['genre',
+genre_index.columns = ['genre',
                       'index',
                       ]
 
 # Infomation
-information = pd.read_csv('/Users/junghongpark/Desktop/recommender/movieLens/ml-100k/u.info',
+information = pd.read_csv(user_path+'/Desktop/recommender/movieLens/ml-100k/u.info',
                           header=None,
                           )
 
@@ -32,12 +35,12 @@ information.columns = ['information',
                        ]
 
 # movie Information
-movieInfo = pd.read_csv('/Users/junghongpark/Desktop/recommender/movieLens/ml-100k/u.item',
+movie_info = pd.read_csv(user_path+'/Desktop/recommender/movieLens/ml-100k/u.item',
                         sep='|',
                         header=None,
                         )
 
-movieInfo.columns = ['id',
+movie_info.columns = ['id',
                      'title',
                      'release_date',
                      'video_release',
@@ -63,12 +66,12 @@ movieInfo.columns = ['id',
                      ]
 
 #user Information
-userInfo = pd.read_csv('/Users/junghongpark/Desktop/recommender/movieLens/ml-100k/u.user',
+user_info = pd.read_csv(user_info+'/Desktop/recommender/movieLens/ml-100k/u.user',
                         sep='|',
                         header=None,
                         )
 
-userInfo.columns = ['id',
+user_info.columns = ['id',
                     'age',
                     'gender',
                     'occupation',
@@ -76,7 +79,7 @@ userInfo.columns = ['id',
                     ]
 
 #occupation
-occupation = pd.read_csv('/Users/junghongpark/Desktop/recommender/movieLens/ml-100k/u.occupation',
+occupation = pd.read_csv(user_info+'/Desktop/recommender/movieLens/ml-100k/u.occupation',
                        sep='|',
                        header=None,
                        )
