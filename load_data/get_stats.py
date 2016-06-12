@@ -1,11 +1,11 @@
 from load_data import *
 
-print userData.shape
+print main_data.shape
 
-eachCustomerMovieNum = userData.groupby('customer').count()['movie']
-eachMovieCustomerNum = userData.groupby('movie').count()['customer']
+each_customer_movie_num = main_data.groupby('customer').count()['movie']
+each_movie_customer_num = main_data.groupby('movie').count()['customer']
 
 # histogram of each Number of Customer for movies and each Number of Movie
 # for customers.
-eachCustomerMovieNum.hist()
-eachMovieCustomerNum.hist()
+each_customer_movie_num.hist()
+each_movie_customer_num.hist()
