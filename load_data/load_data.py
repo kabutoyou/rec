@@ -33,7 +33,7 @@ information = pd.read_csv(
 information.columns = ['information',
                        ]
 
-# movie Information
+# Movie Information
 movie_info = pd.read_csv(
     '../data/recommender/movieLens/ml-100k/u.item',
     sep='|',
